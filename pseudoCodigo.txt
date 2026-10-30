@@ -1,0 +1,63 @@
+
+ALGORITMO "Triagem Inteligente de Chamados"
+
+VAR
+    nome: CARACTERE
+    descricao: CARACTERE
+    impacto: INTEIRO
+    urgencia: INTEIRO
+    classificacao: CARACTERE
+    chamado: OBJETO
+    listaSolicitante: VETOR
+    item: OBJETO
+
+INÍCIO
+
+    listaSolicitante <- CARREGAR_CHAMADOS()
+
+    ESCREVA "Cadastro de chamados de TI"
+
+    LEIA nome
+    LEIA descricao
+    LEIA impacto
+    LEIA urgencia
+
+    SE impacto = 3 E urgencia = 3 ENTÃO
+        classificacao <- "Crítica"
+
+    SENÃO SE impacto = 3 OU urgencia = 3 ENTÃO
+        classificacao <- "Alta"
+
+    SENÃO SE impacto = 2 OU urgencia = 2 ENTÃO
+        classificacao <- "Média"
+
+    SENÃO
+        classificacao <- "Baixa"
+
+    FIMSE
+
+    chamado <- CRIAR_OBJETO(
+        nome,
+        descricao,
+        impacto,
+        urgencia,
+        classificacao
+    )
+
+    ADICIONAR chamado à listaSolicitante
+
+    SALVAR listaSolicitante
+
+    ESCREVA "Lista de chamados cadastrados:"
+
+    PARA CADA item EM listaSolicitante FAÇA
+
+        ESCREVA "Nome: ", item.nome
+        ESCREVA "Descrição: ", item.descricao
+        ESCREVA "Prioridade: ", item.classificacao
+
+    FIMPARA
+
+    ESCREVA "Chamado cadastrado com sucesso!"
+
+FIM

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Triagem Inteligente de Chamados</title>
+</head>
+<body>
+  
+  <header>
+    <img src="assets/logo (2).png" alt="logo triagem de chamadas" width="200">
+    <h1>Triagem Inteligente de Chamados</h1>
+  </header>
+
+  <main>
+  
+   
+     <form id="form">
+      
+        
+          <label>Nome do solicitante</label>
+        <input type="text" 
+        placeholder="nome do solicitante"
+        id="name"
+        >
+      
+
+      
+        <label>Descrição do problema</label>
+        <textarea type="text" 
+        placeholder="descrição do problema"
+        id="description">
+       </textarea>
+
+    
+        <label>Impacto: (1 = baixo, 2 = médio e 3 = alto)</label>
+        <input type="number"
+        id="impact"
+        
+        >
+      
+
+    
+        <label>urgência (1 = baixo, 2 = médio e 3 = alto) =</label>
+        <input 
+        type="number"
+        id="urgent"
+        >
+     
+        <label>Prioridade</label>
+        <input type="text" 
+        placeholder="prioridade no atendimento?"
+        id="priority"
+        >
+     
+        <button type="submit" id="button">Cadastrar</button>
+
+     </form>
+
+     <div id="lista">
+
+     </div>
+        
+   
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
